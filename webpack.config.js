@@ -4,7 +4,7 @@ module.exports = {
   entry: './index.js',
   externals: {},
   resolve: {
-    extensions: ['.scss', '.js', '.json', '.png', '.gif', '.jpg', '.svg']
+    extensions: ['.js', '.json', '.png', '.gif', '.jpg', '.svg']
   },
   module: {
     rules: [
