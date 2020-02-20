@@ -22,7 +22,7 @@
     "url": "git+https://github.com/redhair/image-sizer.git"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=6"
   },
   "bugs": {
     "url": "https://github.com/redhair/image-sizer/issues"
