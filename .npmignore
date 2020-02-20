@@ -1,8 +1,0 @@
-.eslintrc.js
-.gitignore
-.DS_Store
-.travis.yml
-.babelrc
-test.js
-webpack.config.js
-index.js

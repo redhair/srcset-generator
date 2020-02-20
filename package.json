@@ -2,55 +2,44 @@
   "name": "image-sizer",
   "version": "1.0.1",
   "description": "Generates xl, lg, md, sm, and xs images based on a source image.",
+  "author": "Tom Bonanni",
+  "license": "MIT",
+  "homepage": "https://github.com/redhair/image-sizer#readme",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha",
+    "test": "xo && ava",
     "pregit": "npm test",
     "git": "git add . && git commit -m",
     "postgit": "npm run build && git push origin master",
-    "preversion": "npm test",
-    "version": "npm run build && git add .",
-    "postversion": "git push && git push origin master",
     "build": "webpack --mode production"
   },
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redhair/image-sizer.git"
   },
-  "author": "Tom Bonanni",
-  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
   "bugs": {
     "url": "https://github.com/redhair/image-sizer/issues"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "xo": {
+    "space": true
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --print-width 80 --single-quote --write",
-      "git add"
-    ]
-  },
-  "homepage": "https://github.com/redhair/image-sizer#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.6.2",
     "babel-loader": "^8.0.6",
-    "chai": "^4.2.0",
-    "css-loader": "^3.2.0",
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
     "file-loader": "^4.2.0",
-    "husky": "^1.3.1",
     "jsdom": "^16.2.0",
-    "lint-staged": "^8.1.4",
-    "mocha": "^7.0.1",
     "url-loader": "^2.1.0",
     "webpack": "^4.28.3",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "xo": "^0.26.1",
+    "ava": "^3.3.0"
   }
 }
