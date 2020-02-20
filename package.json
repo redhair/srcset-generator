@@ -1,6 +1,6 @@
 {
   "name": "image-sizer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generates xl, lg, md, sm, and xs images based on a source image.",
   "main": "index.js",
   "scripts": {
