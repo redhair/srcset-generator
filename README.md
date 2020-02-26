@@ -22,11 +22,11 @@ const { thumb, sm, md, lg, xl } = generateImageSizes(file);
 
 ## Examples
 
-[ES6](https://codesandbox.io/s/srcset-generator-h25p9)
+[React](https://codesandbox.io/s/srcset-generator-h25p9)
 
 ## API
 
-### generateImageSizes(source, [options])
+### generateImageSizes(source, [sizes], [options])
 
 #### source
 
@@ -36,7 +36,7 @@ The source file to generate from.
 
 #### sizes
 
-Type: `Object`
+Type: `Object`<br>
 Default:
 
 ```js
@@ -66,8 +66,9 @@ Default: `canvas` -->
 
 ## TODO
 
-- Quality setting
-- Output style (dataURI, file, canvas, img, blob)
-- Add Live example (codesandbox)
-- Add browser installation
-- Add ES5 example
+- Quality option
+- Output style option (dataURI, file, canvas, img, blob)
+- Move `sizes` to a key in `options`
+- Add more live examples
+- Add browser installation (umd script tag)
+- Add VanillaJS example

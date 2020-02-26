@@ -5,7 +5,7 @@
   "author": "Tom Bonanni",
   "license": "MIT",
   "homepage": "https://github.com/redhair/srcset-generator#readme",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "node index.js",
     "test": "jest && codecov",
