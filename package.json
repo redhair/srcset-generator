@@ -1,45 +1,67 @@
 {
-  "name": "image-sizer",
+  "name": "srcset-generator",
   "version": "1.0.1",
-  "description": "Generates xl, lg, md, sm, and xs images based on a source image.",
+  "description": "Generates srcset based on a source image.",
   "author": "Tom Bonanni",
   "license": "MIT",
-  "homepage": "https://github.com/redhair/image-sizer#readme",
+  "homepage": "https://github.com/redhair/srcset-generator#readme",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "xo && ava",
-    "pregit": "npm test",
-    "git": "git add . && git commit -m",
-    "postgit": "npm run build && git push origin master",
-    "build": "webpack --mode production"
+    "test": "jest && codecov",
+    "commit": "git-cz",
+    "build": "webpack --mode production",
+    "semantic-release": "semantic-release"
   },
   "files": [
-    "index.js"
+    "dist"
   ],
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
+    ],
+    "testEnvironmentOptions": {
+      "resources": "usable"
+    }
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redhair/image-sizer.git"
+    "url": "git+https://github.com/redhair/srcset-generator.git"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "bugs": {
-    "url": "https://github.com/redhair/image-sizer/issues"
+    "url": "https://github.com/redhair/srcset-generator/issues"
   },
   "xo": {
     "space": true
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "npm test && npm run build"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.6.2",
     "babel-loader": "^8.0.6",
+    "canvas": "^2.6.1",
+    "codecov": "^3.6.5",
+    "commitizen": "^4.0.3",
+    "cz-conventional-commit": "^1.0.6",
     "file-loader": "^4.2.0",
-    "jsdom": "^16.2.0",
+    "ghooks": "^2.0.4",
+    "jest": "^25.1.0",
+    "semantic-release": "^17.0.4",
     "url-loader": "^2.1.0",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.3.6",
-    "xo": "^0.24.0",
-    "ava": "^1.4.1"
+    "xo": "^0.24.0"
   }
 }

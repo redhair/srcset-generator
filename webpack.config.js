@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = {
   entry: './index.js',
-  externals: {},
   resolve: {
     extensions: ['.js', '.json', '.png', '.gif', '.jpg', '.svg']
   },
@@ -30,9 +29,11 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist/'),
-    filename: 'image-sizer.js',
-    libraryTarget: 'commonjs2'
+    filename: 'index.js',
+    libraryTarget: 'umd',
+    library: 'srcset-generator'
   },
+  devtool: 'source-map',
   optimization: {
     minimize: false
   }
