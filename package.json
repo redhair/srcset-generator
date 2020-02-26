@@ -1,6 +1,6 @@
 {
   "name": "srcset-generator",
-  "version": "1.0.1",
+  "version": "0.0.0-development",
   "description": "Generates srcset based on a source image.",
   "author": "Tom Bonanni",
   "license": "MIT",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redhair/srcset-generator.git"
+    "url": "https://github.com/redhair/srcset-generator.git"
   },
   "engines": {
     "node": ">=8"
