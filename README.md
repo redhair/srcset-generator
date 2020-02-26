@@ -1,10 +1,8 @@
-# srcset-generator
+# srcset-generator [![npm](https://img.shields.io/npm/v/srcset-generator?color=black)](https://www.npmjs.com/package/srcset-generator)
 
-![npm](https://img.shields.io/npm/v/srcset-generator?color=limegreen)
-![Travis Build](https://img.shields.io/travis/redhair/srcset-generator)
+[![Travis Build](https://img.shields.io/travis/redhair/srcset-generator)](https://travis-ci.org/redhair/srcset-generator)
+[![Codecov](https://img.shields.io/codecov/c/github/redhair/srcset-generator)](https://codecov.io/gh/redhair/srcset-generator)
 ![Dependencies](https://img.shields.io/david/redhair/srcset-generator)
-![Codecov](https://img.shields.io/codecov/c/github/redhair/srcset-generator)
-![MIT License](https://img.shields.io/github/license/redhair/srcset-generator)
 
 > Zero dependency srcset generator.
 
