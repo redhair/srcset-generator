@@ -41,7 +41,7 @@ async function convertFileToImage(source) {
     let img = await base64ToImage(base64);
     return img;
   } catch (err) {
-    console.error('Convert File To Image Error', { err });
+    throw new Error('Could not convert source to image');
   }
 }
 
@@ -52,19 +52,15 @@ async function convertFileToImage(source) {
  * @param {Object} config - configuration
  */
 async function generateImageSizes(source, sizes = { thumb: 100, sm: 400, md: 600, lg: 1024, xl: 1280 }) {
-  if (!source) throw new Error('Please provide a valid source image.');
+  if (!source) throw new Error('Please provide a valid source image');
 
-  try {
-    let result = {};
-    let img = await convertFileToImage(source);
-    for (let size in sizes) {
-      result[size] = resize(img, sizes[size]);
-    }
-
-    return result;
-  } catch (err) {
-    console.error('Generate Image Error: ', err);
+  let result = {};
+  let img = await convertFileToImage(source);
+  for (let size in sizes) {
+    result[size] = resize(img, sizes[size]);
   }
+
+  return result;
 }
 
 /**
