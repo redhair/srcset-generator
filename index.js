@@ -51,7 +51,7 @@ async function convertFileToImage(source) {
  * @param {File} source - Source file
  * @param {Object} config - configuration
  */
-async function generateImageSizes(source, sizes = { thumb: 100, sm: 400, md: 600, lg: 1024, xl: 1280 }) {
+async function generateImageSizes(source, sizes = { thumb: 100, sm: 400, md: 600, lg: 1024, xl: 1280 }, options = {}) {
   if (!source) throw new Error('Please provide a valid source image');
 
   let result = {};
