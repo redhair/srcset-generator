@@ -11,10 +11,10 @@
 ## Install
 
 ```bash
-npm install srcset-generator
+npm i srcset-generator
 ```
 
-## API
+## Usage
 
 ```js
 import generateImageSizes from 'srcset-generator';
@@ -22,8 +22,14 @@ import generateImageSizes from 'srcset-generator';
 const { thumb, sm, md, lg, xl } = generateImageSizes(file);
 ```
 
+## Examples
+
+[ES6](https://codesandbox.io/s/srcset-generator-h25p9)
+
 ## TODO
 
 - Quality setting
 - Output style (dataURI, file, canvas, img, blob)
 - Add Live example (codesandbox)
+- Add browser installation
+- Add ES5 example
