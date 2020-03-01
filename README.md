@@ -15,9 +15,9 @@ npm i srcset-generator
 ## Usage
 
 ```js
-import generateImageSizes from 'srcset-generator';
+import getSrcset from 'srcset-generator';
 
-const { thumb, sm, md, lg, xl } = generateImageSizes(file);
+const srcset = getSrcset(file);
 ```
 
 ## Examples
@@ -26,7 +26,7 @@ const { thumb, sm, md, lg, xl } = generateImageSizes(file);
 
 ## API
 
-### generateImageSizes(source, [sizes], [options])
+### getSrcset(source, [options])
 
 #### source
 
@@ -34,7 +34,11 @@ Type: `File`
 
 The source file to generate from.
 
-#### sizes
+#### options
+
+Type: `Object`
+
+##### sizes
 
 Type: `Object`<br>
 Default:
@@ -49,11 +53,6 @@ Default:
 }
 ```
 
-<!--
-#### options
-
-Type: `Object`
-
 ##### quality
 
 Type: `Number`<br>
@@ -62,13 +61,18 @@ Default: `100`
 ##### output
 
 Type `string`<br>
-Default: `canvas` -->
+Default: `canvas`
+Options:
+
+- `canvas`
+- `uri`
+- `file`
+- `img`
+- `blob`
 
 ## TODO
 
 - Quality option
-- Output style option (dataURI, file, canvas, img, blob)
-- Move `sizes` to a key in `options`
 - Add more live examples
 - Add browser installation (umd script tag)
 - Add VanillaJS example

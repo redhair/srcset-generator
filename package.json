@@ -5,7 +5,7 @@
   "author": "Tom Bonanni",
   "license": "MIT",
   "homepage": "https://github.com/redhair/srcset-generator#readme",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "jest && codecov",
@@ -61,7 +61,7 @@
     "semantic-release": "^17.0.4",
     "url-loader": "^2.1.0",
     "webpack": "^4.28.3",
-    "webpack-cli": "^3.3.6",
-    "xo": "^0.24.0"
-  }
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {}
 }

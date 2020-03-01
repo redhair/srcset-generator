@@ -1,3 +1,16 @@
+function dataURLtoFile(dataurl, filename) {
+  var arr = dataurl.split(','),
+    mime = arr[0].match(/:(.*?);/)[1],
+    bstr = atob(arr[1]),
+    n = bstr.length,
+    u8arr = new Uint8Array(n);
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n);
+  }
+
+  return new File([u8arr], filename, { type: mime });
+}
+
 /**
  * Converts a file to base64
  *
@@ -22,7 +35,7 @@ function getAspectRatio(img) {
 }
 
 /**
- * Converts an image to base64 format
+ * Converts a base64 image to a JavaScript Image
  *
  * @param {String} base64
  */
@@ -49,18 +62,49 @@ async function convertFileToImage(source) {
  * Generates image sizes for a source image
  *
  * @param {File} source - Source file
- * @param {Object} config - configuration
+ * @param {Object} options
  */
-async function generateImageSizes(source, sizes = { thumb: 100, sm: 400, md: 600, lg: 1024, xl: 1280 }, options = {}) {
+async function getSrcset(
+  source,
+  {
+    sizes = {
+      thumb: 100,
+      sm: 400,
+      md: 600,
+      lg: 1024,
+      xl: 1280
+    },
+    output = 'srcset',
+    quality = 100
+  } = {}
+) {
   if (!source) throw new Error('Please provide a valid source image');
 
-  let result = {};
+  let result = [];
   let img = await convertFileToImage(source);
   for (let size in sizes) {
-    result[size] = resize(img, sizes[size]);
+    result = result.concat([resize(img, sizes[size])]);
   }
 
-  return result;
+  return formatOutput(result, output);
+}
+
+/**
+ *
+ * @param {Object} result
+ * @param {String} outputType
+ */
+function formatOutput(result, outputType) {
+  switch (outputType) {
+    case 'file':
+      return result.map(size => dataURLtoFile(size.toDataURL()));
+    case 'uri':
+      return result.map(size => size.toDataURL());
+    case 'canvas':
+      return result;
+    default:
+      return result;
+  }
 }
 
 /**
@@ -81,7 +125,7 @@ function resize(img, limit) {
   let ctx = canvas.getContext('2d');
   ctx.drawImage(img, 0, 0, width, height);
 
-  return ctx.canvas; //.toDataURL();
+  return ctx.canvas;
 }
 
-export default generateImageSizes;
+export default getSrcset;
