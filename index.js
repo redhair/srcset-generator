@@ -74,7 +74,7 @@ async function getSrcset(
       lg: 1024,
       xl: 1280
     },
-    output = 'srcset',
+    output = 'file',
     quality = 100
   } = {}
 ) {
@@ -100,8 +100,6 @@ function formatOutput(result, outputType) {
       return result.map(size => dataURLtoFile(size.toDataURL()));
     case 'uri':
       return result.map(size => size.toDataURL());
-    case 'canvas':
-      return result;
     default:
       return result;
   }

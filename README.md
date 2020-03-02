@@ -53,26 +53,19 @@ Default:
 }
 ```
 
-##### quality
-
-Type: `Number`<br>
-Default: `100`
-
 ##### output
 
 Type `string`<br>
-Default: `canvas`
+Default: `file`<br>
 Options:
 
 - `canvas`
 - `uri`
 - `file`
-- `img`
-- `blob`
 
 ## TODO
 
-- Quality option
-- Add more live examples
+- Add s3 upload example
 - Add browser installation (umd script tag)
 - Add VanillaJS example
+- Add keywords to package.json
