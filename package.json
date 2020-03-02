@@ -16,6 +16,12 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "srcset",
+    "srcset-generator",
+    "image-resize",
+    "canvas"
+  ],
   "jest": {
     "collectCoverage": true,
     "coverageReporters": [
@@ -34,9 +40,6 @@
   },
   "bugs": {
     "url": "https://github.com/redhair/srcset-generator/issues"
-  },
-  "xo": {
-    "space": true
   },
   "config": {
     "commitizen": {

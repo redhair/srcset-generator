@@ -23,6 +23,7 @@ const srcset = getSrcset(file);
 ## Examples
 
 [React](https://codesandbox.io/s/srcset-generator-h25p9)
+[Simple S3 Upload](https://codesandbox.io/s/srcset-generator-s3-example-8y4tu)
 
 ## API
 
@@ -62,10 +63,3 @@ Options:
 - `canvas`
 - `uri`
 - `file`
-
-## TODO
-
-- Add s3 upload example
-- Add browser installation (umd script tag)
-- Add VanillaJS example
-- Add keywords to package.json
